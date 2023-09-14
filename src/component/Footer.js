@@ -1,6 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios'
 
 const Footer = () => {
+  const [contactUsFormData, setContactUsFormData] = useState("");
+
+    const handleContactUsFormData = (event) => {
+        setReservationFormData({ ...contactUsFormData, [event.target.name]: event.target.value });
+        console.log(contactUsFormData, 'contactusssssssssssssssssss');
+    };
+
+    const contactUsFormSubmit = async (event) => {
+        event.preventDefault();
+        await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contactus/`, contactUsFormData)
+            .then(response => {
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    };
+
   return (
     <>
       <footer className="site-footer  style-1 bg-dark" id="footer">
@@ -14,37 +32,37 @@ const Footer = () => {
                         <p className="m-t10">Lorem Ipsum is simply dummy text of the printing and typesetting
                           industry.</p>
                       </div>
-                      <form className="dzForm dezPlaceAni" method="POST" action="script/contact_smtp.php">
-                        <input type="hidden" className="form-control" name="dzToDo" value="Contact" />
-                        <input type="hidden" className="form-control" name="reCaptchaEnable" value="0" />
+                      <form className="dzForm dezPlaceAni" onSubmit={contactUsFormSubmit}>
+                        {/* <input type="hidden" className="form-control" name="dzToDo" value="Contact" />
+                        <input type="hidden" className="form-control" name="reCaptchaEnable" value="0" /> */}
                         <div className="dzFormMsg"></div>
                         <div className="row">
                           <div className="col-lg-12 col-md-12">
                             <div className="input-group input-line">
-                              <input name="dzName" required type="text" className="form-control"
+                              <input name="name" required type="text" className="form-control" onChange={(e) => handleContactUsFormData(e)}
                                 placeholder="Your Name" />
                             </div>
                           </div>
                           <div className="col-lg-12 col-md-12">
                             <div className="input-group input-line">
-                              <input name="dzEmail" required type="text" className="form-control"
+                              <input name="email" required type="email" className="form-control" onChange={(e) => handleContactUsFormData(e)}
                                 placeholder="Email Address" />
                             </div>
                           </div>
                           <div className="col-lg-12 col-md-12">
                             <div className="input-group input-line">
-                              <input name="dzOther[Subject]" required type="text" className="form-control"
+                              <input name="subject" required type="text" className="form-control" onChange={(e) => handleContactUsFormData(e)}
                                 placeholder="Subject" />
                             </div>
                           </div>
                           <div className="col-sm-12 ">
                             <div className="input-group input-line">
-                              <textarea name="dzMessage" required className="form-control"
+                              <textarea name="message" required className="form-control" onChange={(e) => handleContactUsFormData(e)}
                                 placeholder="Message"></textarea>
                             </div>
                           </div>
                           <div className="col-sm-12">
-                            <button type="submit" name="submit" value="submit"
+                            <button type="submit" onClick={contactUsFormSubmit}
                               className="btn btn-md btn-white btn-hover-1"><span>Send
                                 Message</span></button>
                           </div>
