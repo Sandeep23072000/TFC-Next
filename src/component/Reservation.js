@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 const Reservation = () => {
   const [reservationFormData, setReservationFormData] = useState("");
@@ -8,11 +8,18 @@ const Reservation = () => {
     console.log(reservationFormData);
   };
 
+  const HandleNumberOfMember = (e) => {
+    e.preventDefault();
+    const peopleObj = JSON.parse(e.target.value);
+    setReservationFormData({ ...reservationFormData, people_count: peopleObj });
+    console.log(reservationFormData);
+  }
+
   const reservationFormSubmit = async (event) => {
     event.preventDefault();
     await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/reservation/`, reservationFormData)
       .then(response => {
-        console.log(response,'reservationnnnnnnnnnnnnnnnnnnnnnnn');
+        console.log(response, 'reservationnnnnnnnnnnnnnnnnnnnnnnn');
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -43,7 +50,7 @@ const Reservation = () => {
                   <div className="input-group-prepand">
                     <i className="flaticon-phone-call"></i>
                   </div>
-                  <input required type="text" className="form-control dz-number" name="phone"
+                  <input required type="text" className="form-control dz-number" name="phone" onChange={(e) => handleReservationForm(e)}
                     placeholder="Phone Number" />
                 </div>
               </div>
@@ -61,7 +68,7 @@ const Reservation = () => {
                   <div className="input-group-prepand">
                     <i className="flaticon-two-people"></i>
                   </div>
-                  <input required type="number" className="form-control" name="people" onChange={(e) => handleReservationForm(e)}
+                  <input required type="number" className="form-control" name="people_count" onChange={(e) => HandleNumberOfMember(e)}
                     placeholder="Number Of People" />
                 </div>
               </div>
