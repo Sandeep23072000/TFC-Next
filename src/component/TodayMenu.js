@@ -5,28 +5,27 @@ const TodayMenu = () => {
   const [todaysMenuData, setTodaysMenuData] = useState("");
   const [qualityServiceData, setQualityServiceData] = useState("");
 
-  React.useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/`)
-      .then(response => {
-        console.log(response, 'TodaysMenuDataaaaaaaaaaaaaaaaaaa');
-        setTodaysMenuData(response?.data?.data)
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  // React.useEffect(() => {
+  //   axios.get(`${process.env.NEXT_PUBLIC_API_URL}/`)
+  //     .then(response => {
+  //       console.log(response, 'TodaysMenuDataaaaaaaaaaaaaaaaaaa');
+  //       setTodaysMenuData(response?.data?.data)
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
   React.useEffect(() => {
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/service`)
       .then(response => {
-        console.log(response, 'QualityServiceDataDataaaaaaaaaaaaaaaaaaa');
         setQualityServiceData(response?.data?.data)
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
   }, []);
-
+  
   return (
     <>
       <section className="content-inner-1 section-wrapper-3 overflow-hidden">
@@ -126,75 +125,42 @@ const TodayMenu = () => {
           {/* <!-- Icon Wrapper 1 --> */}
           <div className="icon-wrapper1">
             <div className="row wow fadeInUp" data-wow-delay="0.2s">
-              <div className="col-lg-3 col-md-6 col-sm-6">
-                <div className="icon-bx-wraper style-1 box-hover center"
-                  style={{ backgroundImage: 'url("../assets/images/gallery/grid/pic1.jpg")' }}>
-                  <div className="inner-content">
-                    <div className="icon-bx m-b25">
-                      <span className="icon-cell icon-md">
-                        <i className="flaticon-restaurant"></i>
-                      </span>
-                    </div>
-                    <div className="icon-content">
-                      <h5 className="dz-title">Restaurant</h5>
-                      <p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-6">
-                <div className="icon-bx-wraper style-1 box-hover center"
-                  style={{ backgroundImage: 'url("../assets/images/gallery/grid/pic2.jpg")' }}>
-                  <div className="inner-content">
-                    <div className="icon-bx m-b25">
-                      <span className="icon-cell icon-md">
-                        <i className="flaticon-martini"></i>
-                      </span>
-                    </div>
-                    <div className="icon-content">
-                      <h5 className="dz-title">Bar</h5>
-                      <p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-6">
-                <div className="icon-bx-wraper style-1 box-hover center"
-                  // style="background-image: url(../assets/images/gallery/grid/pic3.jpg)">
-                  // style={{backgroundImage: url(../assets/images/gallery/grid/pic3.jpg)}}>
-                  style={{ backgroundImage: 'url("../assets/images/gallery/grid/pic3.jpg")' }}>
-                  <div className="inner-content">
-                    <div className="icon-bx m-b25">
-                      <span className="icon-cell icon-md">
-                        <i className="flaticon-coffee-cup"></i>
-                      </span>
-                    </div>
-                    <div className="icon-content">
-                      <h5 className="dz-title">Cafe</h5>
-                      <p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-6">
-                <div className="icon-bx-wraper style-1 box-hover center"
-                  // style="background-image: url(../assets/images/gallery/grid/pic4.jpg)">
-                  // style={{backgroundImage: url(../assets/images/gallery/grid/pic4.jpg)}}>
-                  style={{ backgroundImage: 'url("../assets/images/gallery/grid/pic4.jpg")' }}>
-                  <div className="inner-content">
-                    <div className="m-b25">
-                      <span className="icon-cell icon-md">
-                        <i className="flaticon-cake"></i>
-                      </span>
-                    </div>
-                    <div className="icon-content">
-                      <h5 className="dz-title">Dessert</h5>
-                      <p>Lorem ipsum dolor sit amet, dipiscing elit, sed</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {
+                qualityServiceData ? (
+                  qualityServiceData?.map((item, i) => {
+                    return (
+                      <div className="col-lg-3 col-md-6 col-sm-6" key={i}>
+                        <div className="icon-bx-wraper style-1 box-hover center"
+                          style={{ backgroundImage: `url(${item?.image})` }}>
+                          <div className="inner-content">
+                            <div className="icon-bx m-b25">
+                              <span className="icon-cell icon-md">
+                                {i === 0 ? (
+                                  <i className="flaticon-restaurant"></i>
+                                ) : i === 1 ? (
+                                  <i className="flaticon-martini"></i>
+                                ) : i === 2 ? (
+                                  <i className="flaticon-coffee-cup"></i>
+                                ) : i === 3 ? (
+                                  <i className="flaticon-cake"></i>
+                                ) : (
+                                  null
+                                )
+                                }
+                              </span>
+                            </div>
+                            <div className="icon-content">
+                              <h5 className="dz-title">{item?.title}</h5>
+                              <p>{item?.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })) : (
+                  null
+                )
+              }
             </div>
           </div>
           {/* <!-- Icon Wrapper 1 --> */}

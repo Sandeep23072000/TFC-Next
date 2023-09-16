@@ -5,7 +5,7 @@ const SpecialMenu = () => {
   const [specialMenuData, setSpecialMenuData] = useState("");
 
   React.useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/`)
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/category`)
       .then(response => {
         console.log(response, 'TodaysMenuDataaaaaaaaaaaaaaaaaaa');
         setSpecialMenuData(response?.data?.data)
