@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+const dayjs = require('dayjs');
 // import Lottie from 'lottie-react';
 // import animationData from '../../../public/assets/json/coming-soon.json';
 import axios from 'axios';
 
 const CommingSoon = () => {
+    const currentYear = dayjs().format('YYYY');
     const [sendReqFormData, setSendReqFormData] = useState({ email: "" });
     const [emailError, setEmailError] = useState("");
 
@@ -36,9 +38,9 @@ const CommingSoon = () => {
     };
     return (
         <>
-            <div id="loading-area" className="loading-page-3">
+            {/* <div id="loading-area" className="loading-page-3">
                 <img src="assets/images/loading.gif" alt="" />
-            </div>
+            </div> */}
             <div className="page-wraper">
                 <div className="page-content bg-white">
                     <div className="coming-wrapper overflow-hidden">
@@ -55,7 +57,7 @@ const CommingSoon = () => {
                                         {/* <Lottie loop={true}
                                             autoplay={true} animationData={animationData}
                                         /> */}
-                                        <img src="assets/images/comming-soon.jpg" alt="/" />
+                                        <img src="assets/images/comming-soon.jpg" alt="/" style={{opacity:"0.7"}} />
                                     </div>
                                     <div className="middle-content">
                                         <h5 className="font-weight-400 m-b20">Subscribe to our mailing list to get latest updates</h5>
@@ -77,7 +79,7 @@ const CommingSoon = () => {
                                                 )
                                             }
                                         </form>
-                                        <div className="dz-social-icon text-center">
+                                        {/* <div className="dz-social-icon text-center">
                                             <ul>
                                                 <li><a target="_blank" className="text-dark" href="https://www.facebook.com/">
                                                     <i className="fab fa-facebook-f"></i>
@@ -95,10 +97,10 @@ const CommingSoon = () => {
                                                     <i className="fa-brands fa-linkedin-in"></i>
                                                 </a></li>
                                             </ul>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     <div className="coming-footer text-center">
-                                        <p>© Copyrights DexignZone | 2023 All Rights Reserved</p>
+                                        <p>© Copyrights Traditional Food Company | {currentYear} All Rights Reserved</p>
                                     </div>
                                 </div>
                             </div>

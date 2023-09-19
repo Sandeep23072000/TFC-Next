@@ -85,7 +85,7 @@ function themeFramePadding() {
     }
 }
 
-var SwigoSwitcher = function () {
+var TfcSwitcher = function () {
     "use strict";
 
     // addSwitcher();
@@ -423,12 +423,12 @@ var SwigoSwitcher = function () {
 
 
 jQuery(document).ready(function () {
-    SwigoSwitcher.init();
+    TfcSwitcher.init();
 });
 
 jQuery(window).on('load', function () {
 
-    SwigoSwitcher.load();
+    TfcSwitcher.load();
 
     setTimeout(function () {
         setThemePanel();

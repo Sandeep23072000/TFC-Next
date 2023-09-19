@@ -19,17 +19,17 @@ export default function Document() {
           content="restaurant, restaurant website templates, restaurant template, food, restro, hotel, bootstrap 5, bootstrap, html, frontend, TFC, responsive template, shop, cart, menu, taste, blog, service, cook, customers, website, hungry, shop cart, fast food, table booking, website templates for restaurants, food website templates" />
         <meta name="description"
           content="Boost your food business with TFC's restaurant website templates. Our professionally designed templates cater specifically to the needs of restaurants, offering visually stunning and functional designs. Choose from a variety of food website templates that are perfect for showcasing your menu, promoting your services, and attracting hungry customers. Partner with DexignZone to create an impressive online presence for your restaurant. Start driving more traffic and growing your business today." />
-        <meta property="og:title" content="TFC - Empowering Your Restaurant Website Templates | DexignZone" />
+        <meta property="og:title" content="TFC - Empowering Your Restaurant Website Templates" />
         <meta property="og:description"
           content="Boost your food business with TFC's restaurant website templates. Our professionally designed templates cater specifically to the needs of restaurants, offering visually stunning and functional designs. Choose from a variety of food website templates that are perfect for showcasing your menu, promoting your services, and attracting hungry customers. Partner with DexignZone to create an impressive online presence for your restaurant. Start driving more traffic and growing your business today." />
-        <meta property="og:image" content="https://TFC.dexignzone.com/xhtml/social-home.png" />
+        <meta property="og:image" content="" />
         <meta name="format-detection" content="telephone=no" />
 
         {/* <!-- Mobile Specific --> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* <!-- Favicon icon --> */}
-        <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+        {/* <link rel="icon" type="image/png" href="../assets/images/favicon.png" /> */}
 
         {/* <!-- Stylesheet --> */}
         <link href="../assets/vendor/animate/animate.css" rel="stylesheet" />

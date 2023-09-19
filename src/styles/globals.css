@@ -1,3 +1,11 @@
+/* ****************icon None ******************************** */
+
+.DZ-bt-buy-now,
+.DZ-theme-btn,
+.DZ-bt-support-now {
+    display: none !important;
+}
+
 /* ******************************newsBlock**************************** */
 .description-line-clamp {
     display: -webkit-box;
@@ -24,8 +32,17 @@
     overflow: hidden;
 }
 
-.dz-bnr-inr.style-1{
-    background-image:url('../../public/assets/images/background/pic1.png');
-     background-size:cover; 
-     background-position:center;
+.dz-bnr-inr.style-1 {
+    background-image: url('../../public/assets/images/background/pic1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* *************************404 page ************************ */
+
+.content-inner.error-page {
+    background-image: url('../../public/assets/images/background/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -1,14 +1,14 @@
 @font-face {
-    font-family: "flaticon_swigo";
-    src: url("./flaticon_swigo.ttf?64497de560921368cd586e6c5ea1ea6e") format("truetype"),
-url("./flaticon_swigo.ttf") format("woff"),
-url("./flaticon_swigo.woff2?64497de560921368cd586e6c5ea1ea6e") format("woff2"),
-url("./flaticon_swigo.eot?64497de560921368cd586e6c5ea1ea6e#iefix") format("embedded-opentype"),
-url("./flaticon_swigo.svg?64497de560921368cd586e6c5ea1ea6e#flaticon_swigo") format("svg");
+    font-family: "flaticon_tfc";
+    src: url("./flaticon_tfc.ttf?64497de560921368cd586e6c5ea1ea6e") format("truetype"),
+url("./flaticon_tfc.ttf") format("woff"),
+url("./flaticon_tfc.woff2?64497de560921368cd586e6c5ea1ea6e") format("woff2"),
+url("./flaticon_tfc.eot?64497de560921368cd586e6c5ea1ea6e#iefix") format("embedded-opentype"),
+url("./flaticon_tfc.svg?64497de560921368cd586e6c5ea1ea6e#flaticon_tfc") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
-    font-family: flaticon_swigo !important;
+    font-family: flaticon_tfc !important;
     font-style: normal;
     font-weight: normal !important;
     font-variant: normal;
