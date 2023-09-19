@@ -17385,7 +17385,7 @@ section {
 }
 
 .logo-header img {
-    max-width: 180px;
+    max-width: 200px;
     object-fit: contain;
     -webkit-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -18636,7 +18636,7 @@ section {
     display: inline-block;
 }
 
-.anim-logo:after,
+/* .anim-logo:after,
 .anim-logo-white:after {
     content: "";
     animation-duration: 1.8s;
@@ -18650,7 +18650,7 @@ section {
     top: 8px;
     left: 3px;
     background-repeat: no-repeat;
-}
+} */
 
 @media only screen and (max-width: 767px) {
 

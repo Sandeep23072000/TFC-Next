@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import dayjs from 'dayjs';
 import axios from 'axios';
+import Link from 'next/link';
 
 const NewsBlog = () => {
   const [newsBlogData, setNewsBlogData] = useState("");
-
   React.useEffect(() => {
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post`)
       .then(response => {
@@ -44,15 +45,15 @@ const NewsBlog = () => {
                           <div className="dz-info">
                             <div className="dz-meta">
                               <ul>
-                                <li><a href="/"><i className="flaticon-calendar-date"></i>
-                                  {item?.published_date}</a></li>
-                                <li className="dz-comment"><a href="/"><i
-                                  className="flaticon-chat-bubble"></i>{item?.like}</a></li>
+                                <li><Link href="/"><i className="flaticon-calendar-date"></i>
+                                {dayjs(item?.published_date).format('D MMMM YYYY')}</Link></li>
+                                <li className="dz-comment"><Link href="/"><i
+                                  className="flaticon-chat-bubble"></i>{item?.like}</Link></li>
                               </ul>
                             </div>
                             <h5 className="dz-title"><a href="blog-standard.html">{item?.title}</a>
                             </h5>
-                            <p dangerouslySetInnerHTML={{__html:item?.content}}></p>
+                            <p className="description-line-clamp" dangerouslySetInnerHTML={{__html:item?.content}}></p>
                             <div className="read-btn">
                               <a href="blog-standard.html" className="btn btn-primary btn-hover-2">Read
                                 More</a>

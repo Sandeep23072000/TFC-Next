@@ -92,7 +92,7 @@ const Reservation = () => {
               </div>
               <div className="col-lg-12 col-md-12 text-center">
                 <button type="submit"
-                  className="btn btn-lg btn-white btn-hover-1" onSubmit={reservationFormSubmit}><span>Book a Table</span></button>
+                  className="btn btn-lg btn-white btn-hover-1" onClick={reservationFormSubmit}><span>Book a Table</span></button>
               </div>
             </div>
           </form>

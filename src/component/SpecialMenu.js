@@ -37,7 +37,7 @@ const SpecialMenu = () => {
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
-              <div className="dz-img-box style-2 box-hover active">
+              <div className="dz-img-box style-2 box-hover">
                 <div className="dz-media">
                   <img src="../assets/images/gallery/small/pic2.jpg" alt="/" />
                 </div>

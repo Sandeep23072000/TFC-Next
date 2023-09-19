@@ -31,7 +31,7 @@ const TodayMenu = () => {
       <section className="content-inner-1 section-wrapper-3 overflow-hidden">
         <div className="container">
           <div className="section-head text-center">
-            <h2 className="title wow flipInX" data-wow-delay="0.2s">Today's Menu</h2>
+            <h2 className="title wow flipInX" data-wow-delay="0.2s">Today&apos;s Menu</h2>
           </div>
           <div className="row inner-section-wrapper">
             <div className="col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">

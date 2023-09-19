@@ -1,0 +1,31 @@
+/* ******************************newsBlock**************************** */
+.description-line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.dz-card.style-1 {
+    height: 280px;
+}
+
+.testimonial-1 .testimonial-text p {
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.icon-bx-wraper p:last-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.dz-bnr-inr.style-1{
+    background-image:url('../../public/assets/images/background/pic1.png');
+     background-size:cover; 
+     background-position:center;
+}
